@@ -10,7 +10,7 @@ npm run build
 cd dist
 
 # if you are deploying to a custom domain
-echo 'guild.land' > CNAME
+# echo 'guild.land' > CNAME
 
 git init
 git add -A
@@ -20,6 +20,6 @@ git commit -m 'deploy gh-pages'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:dangerousbeans/secret-islands.git master:gh-pages
+git push -f git@github.com:dangerousbeans/scuttleflotilla-live.git master:gh-pages
 
 cd -
