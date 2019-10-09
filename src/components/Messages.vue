@@ -100,7 +100,7 @@ export default {
         
           this.$data.loading = false
           q = {
-          limit: 20,
+          limit: 500,
           reverse: true,
           live: true,
           query: [{

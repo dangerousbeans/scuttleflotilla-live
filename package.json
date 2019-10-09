@@ -19,6 +19,7 @@
     "dataurl": "^0.1.0",
     "flumeview-query": "^7.1.1",
     "gixi": "github:h2y/gixi",
+    "leaflet": "^1.5.1",
     "node-sass": "^4.12.0",
     "pull-abortable": "^4.1.1",
     "sass-loader": "^7.1.0",
@@ -36,7 +37,8 @@
     "vue-read-more": "^1.1.1",
     "vue-router": "^3.0.6",
     "vue-ssb": "^1.0.1",
-    "vue-timeago": "^5.1.2"
+    "vue-timeago": "^5.1.2",
+    "vue2-leaflet": "^2.2.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.6.0",

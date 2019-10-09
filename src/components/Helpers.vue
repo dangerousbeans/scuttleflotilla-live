@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h3>Crew</h3>
+    <h3>Alchemist Token Holders: {{Object.keys(balances).length - 1}}</h3>
     
     <div>
       <Helper v-for="helper in Object.keys(balances)" :helper="helper" v-bind:key="helper.id"></Helper>
@@ -32,7 +32,6 @@ export default {
   methods: {
     balances_loaded: function(err, balances)
     {
-      console.log("balances_loaded", balances)
       this.$data.balances = balances
     },
   },
@@ -43,12 +42,6 @@ export default {
     this.$ssb.then((ssb) => {
       var mutual = Mutual.init(ssb)
       mutual.getCurrencyBalances("🔷", this.balances_loaded)
-      // console.log(ssb.getAddress("public", function(err, address) { console.log(address) } ))
-      // debugger
-      // sbotLibs.displayName(ssb, JSON.parse(localStorage.keys).id, this.name_loaded)
-      // sbotLibs.avatar(ssb, JSON.parse(localStorage.keys).id, this.avatar_loaded)  
-
-
     })
   },
   
