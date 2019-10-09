@@ -1,9 +1,10 @@
-# Secret Islands
+# ScuttleShip Dashboard
 
-![preview](https://raw.githubusercontent.com/dangerousbeans/secret-islands/master/island.png)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdangerousbeans%2Fsecret-islands.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdangerousbeans%2Fsecret-islands?ref=badge_shield)
+## About
 
-## Setup
+This is a live stream from Secure Scuttlebutt to show the activities of Alchemist 'scuttleship' and the rest of the #scuttleflotilla
+
+
 ```sh
 npm install
 ```
@@ -38,18 +39,5 @@ npm run ghpages
 ```
 
 
-## TODO
-
-- [x] render map
-- [x] geo post
-- [x] geo filter posts
-- [x] public onboarding pub
-- [ ] warn about using non-local, encourage local sbot or electron version
-- [x] clingy pub: follow back connection attempts
-- [x] inital follow (follow the clingy pub to get started)
-- [x] activity map
-- [ ] SSB City place to put existing non-geocoded activity
-
-
 ## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdangerousbeans%2Fsecret-islands.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdangerousbeans%2Fsecret-islands?ref=badge_large)
+MIT
