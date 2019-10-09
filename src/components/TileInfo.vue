@@ -4,13 +4,6 @@
 
     <!-- <b-button class="btn-xxs btn-primary" v-if="status != 'ScuttleCity'" v-b-modal.modal-1>Build a camp 🔥</b-button> -->
 
-    
-
-    <p v-for="tag in active_tags">
-      <span class="badge badge-secondary">
-        {{ tag }}
-      </span>
-    </p>
   </div>
 </template>
 

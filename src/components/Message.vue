@@ -150,14 +150,14 @@ export default {
       sbotLibs.avatar(ssb, this.message.value.author, this.avatar_loaded)    
       sbotLibs.countStream(ssb, this.message.key, this.like_loaded)  
       // sbotLibs.related(ssb, this.message.key, this.related_loaded)  
-      if(this.message.value.content.branch !== null)
-      {
-        ssb.get(this.message.value.content.branch, this.previous_loaded)
-      }
-      else if( this.message.value.content.root !== null)
-      {
-        ssb.get(this.message.value.content.root, this.previous_loaded)
-      }
+      // if(this.message.value.content.branch !== null)
+      // {
+      //   ssb.get(this.message.value.content.branch, this.previous_loaded)
+      // }
+      // else if( this.message.value.content.root !== null)
+      // {
+      //   ssb.get(this.message.value.content.root, this.previous_loaded)
+      // }
     })
   },
   

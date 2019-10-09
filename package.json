@@ -27,6 +27,7 @@
     "ssb-clingy": "^1.0.0",
     "ssb-invite": "^2.0.4",
     "ssb-markdown": "^4.1.1",
+    "ssb-mutual": "^0.1.0",
     "ssb-validate": "^4.0.4",
     "topojson-client": "^3.0.0",
     "vue": "^2.6.10",
