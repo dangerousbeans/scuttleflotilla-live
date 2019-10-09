@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <h3>Helpers</h3>
+    <h3>Crew</h3>
     
-    <row>
+    <div>
       <Helper v-for="helper in Object.keys(balances)" :helper="helper" v-bind:key="helper.id"></Helper>
-    </row>
+    </div>
   </div> <!-- /container -->  
 </template>
 
@@ -55,4 +55,9 @@ export default {
 }
 </script>
 
+<style>
+.message
+{
+  padding: 0.3em;
+}
 </style>  

@@ -3,7 +3,7 @@
   <div class="fluid-container">
     <div class="row">
       <div id="" class="col-md-8">
-        <div class="card-body scroll" style="max-height: 1500px">
+        <div class="card-body scroll">
           <TileInfo v-bind:active_tags="active_tags"></TileInfo>
           
           <h4><small>Live SSB Feed of the Scuttlebutt Solarpunk Fleet</small></h4>
@@ -85,14 +85,5 @@ export default {
 
 <style>
 
-.message{
-  overflow-y: wrap;
-}
 
-
-.scroll
-{
-  overflow-y: scroll;
-  height: 100%;
-}
 </style>

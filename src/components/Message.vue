@@ -164,7 +164,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 
 .tweet-footer-btn {
   margin-right: 30px;
@@ -183,6 +183,11 @@ export default {
 .distant
 {
   color: grey;
+}
+
+img
+{
+  max-width: 100%;
 }
 
 </style>  
