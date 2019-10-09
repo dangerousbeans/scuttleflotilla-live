@@ -5,6 +5,7 @@
       <div class="media-body">
         <h5 class="mt-0 text-truncate">
           {{ $data.author.authorName }}  
+          
         </h5>
       </div>
     </div>

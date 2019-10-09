@@ -13,7 +13,7 @@ module.exports = {
   },
 
   // Github pages setup
-  publicPath: '/'
+  publicPath: '/scuttleflotilla-live'
 
   // process.env.NODE_ENV === 'production'
 	 //    ? '/secret-islands/'
