@@ -1,11 +1,12 @@
 <template>
-  <div class="container">
-    <h3>Alchemist Token Holders: {{Object.keys(balances).length - 1}}</h3>
-    
-    <div>
-      <Helper v-for="helper in Object.keys(balances)" :helper="helper" v-bind:key="helper.id"></Helper>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Alchemist Token Holders: {{Object.keys(balances).length - 1}}</h5>
+      <p class="card-text">
+        <Helper v-if="balances != null" v-for="helper in Object.keys(balances)" :helper="helper" v-bind:key="helper.id"></Helper>
+      </p>
     </div>
-  </div> <!-- /container -->  
+  </div>  
 </template>
 
 <script>

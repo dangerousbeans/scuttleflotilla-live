@@ -70,7 +70,6 @@ export default {
     'message': {},
     'x': String,
     'y': String,
-    'active_tags': Array
    },
 
   data() {

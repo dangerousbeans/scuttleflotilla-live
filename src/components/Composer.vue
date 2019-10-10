@@ -39,7 +39,6 @@ export default {
   props: {
     'x': String,
     'y': String,
-    'active_tags': Array
   },
   components: {
     VueTagsInput,
@@ -51,12 +50,6 @@ export default {
       writing: false,
       tag: '', 
       tags: []
-    }
-  },
-  watch: {
-    active_tags: function(new_tags, old_tags)
-    {
-      this.$data.tags = createTags( new_tags )
     }
   },
   mounted: function()

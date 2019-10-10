@@ -1,6 +1,5 @@
 <template>
   <div class="row">
-    <!-- <Composer @new_post="new_post" :active_tags="this_tile_tags" :x="$props.x" :y="$props.y"></Composer> -->
 
     <div v-if="loading" class="spinner-border" label="Spinning"></div>
 

@@ -17,6 +17,7 @@
     "d3": "^5.9.2",
     "d3-drag": "^1.2.3",
     "dataurl": "^0.1.0",
+    "etherscan-api": "^10.0.5",
     "flumeview-query": "^7.1.1",
     "gixi": "github:h2y/gixi",
     "leaflet": "^1.5.1",

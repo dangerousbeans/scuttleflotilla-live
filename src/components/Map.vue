@@ -4,13 +4,12 @@
     <div class="row">
       <div id="" class="col-md-8">
         <div class="card-body scroll">
-          <TileInfo v-bind:active_tags="active_tags"></TileInfo>
+          <TileInfo></TileInfo>
           
           <h4><small>Live SSB Feed of the Scuttlebutt Solarpunk Fleet</small></h4>
 
           <br/>
-          <!-- <h3 class="card-title">{{active_tags}}</h3> -->
-          <Messages style="max-height: 100%" v-bind:this_tile_tags="active_tags" ></Messages>
+          <Messages style="max-height: 100%" ></Messages>
         </div>  
       </div>
       <div class="col-md-4">
@@ -51,6 +50,17 @@
             </l-marker>
           </l-map>
         </div>
+
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Shared Funds</h5>
+            <p class="card-text">
+               Ξ {{ balance / 1000000000000000000 }} Ether
+            </p>
+            <a href="https://etherscan.io/address/0x9f2E66Bd2354f37793C5f75516B2371190ce68f0" class="card-link">Details</a>
+          </div>
+        </div>
+
         <Helpers></Helpers>
       </div>
     </div>
@@ -73,8 +83,6 @@ const drain = require('pull-stream/sinks/drain')
 
 import sbotLibs from './../sbot'
 
-
-
 export default {
 
   components: {
@@ -87,7 +95,6 @@ export default {
     LTooltip
   },
 
-  
   data () {
     return { 
       zoom: 3,
@@ -103,12 +110,13 @@ export default {
       mapOptions: {
         zoomSnap: 0.5
       },
-      showMap: true
+      showMap: true,
+      balance: "-"
     }
   },
 
   methods: {
-     zoomUpdate(zoom) {
+    zoomUpdate(zoom) {
       this.currentZoom = zoom;
     },
     centerUpdate(center) {
@@ -119,6 +127,9 @@ export default {
     },
     innerClick() {
       alert("Click!");
+    },
+    balance_loaded(bal_data) {
+      this.$data.balance = bal_data.result
     }
   },
 
@@ -129,6 +140,10 @@ export default {
     // }).addTo(this.$refs.scuttleshipMap.mapObject)
 
     })
+    var api = require('etherscan-api').init('32UFFXZPZBPRJPEY2IKU3QE94WQMN2HNIF');
+    var balance = api.account.balance('0x9f2E66Bd2354f37793C5f75516B2371190ce68f0');
+    balance.then(this.balance_loaded);
+
     // Check we're following the pub
     this.$ssb.then((ssb) => {
       var pub_id = "@+COav7rGgSXqV36bsgYJK1EHtUuk9SvojPFGdIzJLlA=.ed25519"
