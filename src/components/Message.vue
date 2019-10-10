@@ -1,5 +1,5 @@
 <template><!-- v-bind:class="distant" -->
-  <div>
+  <div style="width: 100%">
       
     
     <div class="media mt-12 col-sm-12 message" >
@@ -187,6 +187,11 @@ export default {
 img
 {
   max-width: 100%;
+}
+
+.message
+{
+  width: 100%;
 }
 
 </style>  
