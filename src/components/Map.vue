@@ -55,7 +55,7 @@
           <div class="card-body">
             <h5 class="card-title">Shared Funds</h5>
             <p class="card-text">
-               Ξ {{ balance / 1000000000000000000 }} Ether
+               Ξ {{ (balance / 1000000000000000000).toFixed(4) }} Ether
             </p>
             <a href="https://etherscan.io/address/0x9f2E66Bd2354f37793C5f75516B2371190ce68f0" class="card-link">Details</a>
           </div>
