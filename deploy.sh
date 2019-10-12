@@ -10,7 +10,7 @@ npm run build
 cd dist
 
 # if you are deploying to a custom domain
-# echo 'guild.land' > CNAME
+echo 'scuttleflotilla.solar' > CNAME
 
 git init
 git add -A
