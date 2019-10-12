@@ -1,6 +1,6 @@
 <template>
 	<div class="">
-		<h3 class="card-title"><span class="font-weight-bold">⛵</span>ScuttleShip</h3>
+		<h3 class="card-title"><span class="font-weight-bold">⛵</span>ScuttleFlotilla</h3>
 
     <!-- <b-button class="btn-xxs btn-primary" v-if="status != 'ScuttleCity'" v-b-modal.modal-1>Build a camp 🔥</b-button> -->
 

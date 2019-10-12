@@ -2,11 +2,13 @@
 <template>
   <div class="fluid-container">
     <div class="row">
+      
+
       <div id="" class="col-md-8">
-        <div class="card-body scroll">
+        <div class="card-body scroll whitebg">
           <TileInfo></TileInfo>
           
-          <h4><small>Live SSB Feed of the Scuttlebutt Solarpunk Fleet</small></h4>
+           <h4><small>Live SSB Feed of the Scuttlebutt Solarpunk Fleet</small></h4>
 
           <br/>
           <Messages style="max-height: 100%" ></Messages>
@@ -172,6 +174,19 @@ export default {
 </script>
 
 <style>
+
+#app
+{
+  background-image: url('./../assets/solarpunkfleet.png');
+  background-repeat: no-repeat;
+  background-width: 200px;
+  padding: 4em;
+}
+
+.whitebg
+{
+  background-color: rgba(255, 255, 255, 0.8);
+}
 
 .map
 {
