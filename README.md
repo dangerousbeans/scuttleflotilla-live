@@ -1,3 +1,5 @@
+![preview](https://raw.githubusercontent.com/dangerousbeans/scuttleflotilla-live/master/src/assets/solarpunkfleet.png)
+
 # ScuttleShip Dashboard
 
 ## About
