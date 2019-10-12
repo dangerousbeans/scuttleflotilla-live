@@ -107,7 +107,9 @@ export default {
               value: {
                 content: { 
                   type: 'post',
-                  channel: 'scuttleflotilla'
+                  channel: 'scuttleflotilla',
+                  root: { $not: true }, // is a root (as doesn't name a root)
+                  recps: { $not: true } // is public
                 },
               }
             }}]
