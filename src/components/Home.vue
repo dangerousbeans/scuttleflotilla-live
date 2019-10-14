@@ -13,7 +13,7 @@
         </div>  
       </div>
       <div class="col-md-4">
-        <div class="map">
+        <!-- <div class="map">
           <l-map
             v-if="showMap"
             :zoom="zoom"
@@ -48,8 +48,8 @@
                 </div>
               </l-tooltip>
             </l-marker>
-          </l-map>
-        </div>
+          </l-map> -->
+        <!-- </div> -->
 
         <div class="card">
           <div class="card-body">

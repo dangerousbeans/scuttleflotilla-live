@@ -5,6 +5,7 @@
     <div class="media mt-12 col-sm-12 message" >
       <router-link class="" :to="{ name: 'ViewProfile', params: { id: message.value.author } }" >
         <img class="pr-3 rounded " style="max-width: 60px;" v-bind:src="avatar">
+
       </router-link>
       <div class="media-body">
         <h5 class="mt-0 text-truncate">
@@ -29,9 +30,6 @@
           <read-more more-str="[more]" less-str="[less]" :max-chars="400" :text="textmd"></read-more>
         </div>
         <div class="tweet-footer">
-          <!-- <a class="tweet-footer-btn">
-            <eva-icon name="message-square-outline"></eva-icon><span>{{replies}}</span>
-          </a> -->
           <a class="tweet-footer-btn" v-on:click="likeClick">
             <eva-icon name="heart-outline" animation="pulse"></eva-icon><span v-if="likes.length > 0">{{ likes.length }}</span>
           </a>
@@ -43,14 +41,20 @@
           <!-- </router-link> -->
         </div>
 
-        <a v-on:click="showRaw = !showRaw">+</a>
+        <!-- <a v-on:click="showRaw = !showRaw">+</a>
         <pre v-if="showRaw">
           {{ message }}
-        </pre>
-<!-- 
-        <message v-for="r in related" :message="r">
-        </message> -->
+        </pre> -->
 
+        <container>
+          <small-message v-for="r in related" :message="r" :child="true">
+          </small-message>
+          
+          <a class="showAll" href="javascript:void(0);" v-if="related_overflow.length > 0 && !showOverflow" v-on:click="showOverflow = !showOverflow">[{{ related_overflow.length }} More Replies]</a>
+          
+          <small-message v-if="showOverflow" v-for="r in related_overflow" :message="r" :child="true">
+          </small-message>
+        </container>
       </div>
     </div>
   </div>
@@ -63,6 +67,7 @@ import GIXI from 'gixi'
 pull.paraMap = require('pull-paramap')
 var md = require('ssb-markdown')
 
+import SmallMessage from './SmallMessage'
 
 export default {
   name: 'message',
@@ -70,7 +75,11 @@ export default {
     'message': {},
     'x': String,
     'y': String,
+    'child': Boolean
    },
+   components: {
+    SmallMessage
+  },
 
   data() {
     return {
@@ -79,10 +88,12 @@ export default {
       textmd: "...",
       likes: [],
       related: [],
+      related_overflow: [],
       root: null,
       branch: null,
       replies: 0,
-      showRaw: false
+      showRaw: false,
+      showOverflow: false
     }
   },
   
@@ -100,7 +111,15 @@ export default {
     },
     related_loaded: function(err, related)
     {
-      this.$data.related.push(related)
+
+      if(this.$data.related.length == undefined || this.$data.related.length < 3)
+      {
+        this.$data.related.push(related)
+      }
+      else
+      {
+        this.$data.related_overflow.push(related)
+      }
     },
     avatar_loaded: function(err, avatar)
     {
@@ -148,7 +167,8 @@ export default {
       sbotLibs.displayName(ssb, this.message.value.author, this.name_loaded)
       sbotLibs.avatar(ssb, this.message.value.author, this.avatar_loaded)    
       sbotLibs.countStream(ssb, this.message.key, this.like_loaded)  
-      // sbotLibs.related(ssb, this.message.key, this.related_loaded)  
+      if(!this.child)
+        sbotLibs.related(ssb, this.message.key, this.related_loaded)  
       // if(this.message.value.content.branch !== null)
       // {
       //   ssb.get(this.message.value.content.branch, this.previous_loaded)
@@ -183,6 +203,7 @@ export default {
 {
   color: grey;
 }
+
 
 img
 {
