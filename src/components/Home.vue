@@ -1,9 +1,7 @@
 
 <template>
-  <div class="fluid-container">
+  <div class="container">
     <div class="row">
-      
-
       <div id="" class="col-md-8">
         <div class="card-body scroll whitebg">
           <TileInfo></TileInfo>
@@ -179,8 +177,8 @@ export default {
 {
   background-image: url('./../assets/solarpunkfleet.png');
   background-repeat: no-repeat;
-  background-width: 200px;
-  padding: 4em;
+  background-size: auto;
+  background-position: top;
 }
 
 .whitebg

@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Map from './../components/Map'
+import Home from './../components/Home'
 import Profile from './../components/Profile'
 import ViewProfile from './../components/ViewProfile'
 import Messages from './../components/Messages'
-import Thread from './../components/Thread'
+import About from './../components/About'
+
+// import Thread from './../components/Thread'
 
 
 Vue.use(VueRouter)
@@ -15,7 +17,7 @@ export default new VueRouter({
     {
       path: '/',
       name: 'Home',
-      component: Map
+      component: Home
     },
     {
       path: '/post/:id',
@@ -23,9 +25,9 @@ export default new VueRouter({
       component: Messages
     },
     {
-      path: '/feed',
-      name: 'Feed',
-      component: Thread
+      path: '/about',
+      name: 'About',
+      component: About
     },
     {
       path: '/profile',
